@@ -58,7 +58,7 @@ if r == "1" :
     if z <= "0":
         os.system("clear")
         print("\033[1;93mC can't be negative")
-        sleep(20)
+        time.sleep(20)
         os.system("python main.py")
     
 if r == "2" :
