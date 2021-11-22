@@ -1,5 +1,6 @@
 import  os
 import time
+import math
 os.system("clear && figlet MATH")
 # Regular Colors  
 Black="\[\033[0;30m\]" # Black
@@ -36,34 +37,33 @@ print("""
 \033[1;96m5)\033[1;94m|x-a|/|x+b|=c\033[1;97m
 \033[1;96m6)\033[1;94m|x+a|-|x-b|=c\033[1;97m
 \033[1;96m7)\033[1;94m|x+a|+|x-b|=c\033[1;97m
-""")
+\033[1;93mC can't be negative""")
 r=input("\033[1;92m==>\033[1;91m ")
 if r == "1" :
     y=input("A \033[1;92m==>\033[1;91m ")
     z=input("C \033[1;92m==>\033[1;91m ")
-    print("\033[0;92m| \033[0;94mx \033[0;92m+\033[0;94m",y,"\033[0;92m| =\033[0;94m",z)
-    print("\033[0;92m( \033[0;94mx \033[0;92m+\033[0;94m",y,"\033[0;92m) =\033[0;94m",z,"or \033[0;92m-( \033[0;94mx \033[0;92m+\033[0;94m",y,"\033[0;92m) =\033[0;94m",z)
     a=int(y)
     c=int(z)
-    if y >= "0":
-        x=c-a
-        x2=-c-a
-        print("\033[0;94mX1 \033[0;92m=\033[0;91m",x)
-        print("\033[0;94mX2 \033[0;92m=\033[0;91m",x2)
-    if y <= "0":
-        x=c+a
-        x2=c+a
-        print("\033[0;94mX1 \033[0;92m=\033[0;91m",x)
-        print("\033[0;94mX2 \033[0;92m=\033[0;91m",x2)
-    if z <= "0":
-        os.system("clear")
-        print("\033[1;93mC can't be negative")
-        time.sleep(20)
-        os.system("python main.py")
-    
-if r == "2" :
-    a=int(input("A \033[1;92m==>\033[1;91m "))
-    c=int(input("C \033[1;92m==>\033[1;91m "))
-if r == "3" :
-    a=int(input("A \033[1;92m==>\033[1;91m "))
-    c=int(input("C \033[1;92m==>\033[1;91m "))
+    if y < "0":
+            print("\033[0;92m| \033[0;94mx\033[0;94m",y,"\033[0;92m| =\033[0;94m",z)
+            print("\033[0;92m( \033[0;94mx\033[0;92m\033[0;94m",y,"\033[0;92m) =\033[0;94m",z,"or \033[0;92m-( \033[0;94mx\033[0;94m",y,"\033[0;92m) =\033[0;94m",z)
+            a2=a-2*a
+            x=c+a2
+            x2=-c+a2
+            print("\033[0;94mX1 \033[0;92m=\033[0;91m",x)
+            print("\033[0;94mX2 \033[0;92m=\033[0;91m",x2)
+    if y > "0":
+            print("\033[0;92m| \033[0;94mx +\033[0;94m",y,"\033[0;92m| =\033[0;94m",z)
+            print("\033[0;92m( \033[0;94mx +\033[0;92m\033[0;94m",y,"\033[0;92m) =\033[0;94m",z,"or \033[0;92m-( \033[0;94mx +\033[0;94m",y,"\033[0;92m) =\033[0;94m",z)
+            x=c-a
+            x2=-c-a
+            print("\033[0;94mX1 \033[0;92m=\033[0;91m",x)
+            print("\033[0;94mX2 \033[0;92m=\033[0;91m",x2)
+    if z < "0":
+            os.system("clear")
+            print("\033[1;93mC can't be negative")
+            time.sleep(2)
+            os.system("python main.py")
+else :
+    print("programe not complet u can use : 1")
+    os.system("python main.py")
